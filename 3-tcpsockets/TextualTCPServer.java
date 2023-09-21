@@ -2,7 +2,7 @@ import java.io.*;
 import java.net.*;
 import static java.nio.charset.StandardCharsets.*;
 
-class TexualTCPServer {
+class TextualTCPServer {
     public static void main(String args[]) {
 
         try (ServerSocket serverSocket = new ServerSocket(1234)) {
