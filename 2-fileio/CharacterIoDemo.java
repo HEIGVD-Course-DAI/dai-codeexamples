@@ -33,10 +33,5 @@ public class CharacterIoDemo {
 		System.out.println("When I encode '" + message + "' (" + message.length() + " chars) with encoding " + encoding + ", I generate " + bytes.length + " bytes.");
 		System.out.println("If I decode the result with the same encoding (" + encoding + "), I get: " + decodedMessage);
 		System.out.println("If I decode the result with the default encoding (UTF-8), I get: " + utf8DecodedMessage);
-        // Wait for Java 21 to use String templates
-		// System.out.println(STR."When I encode \{message\} (\{message.length()\} chars) with encoding \{encoding\}, I generate \{bytes.length\} bytes.");
-		// System.out.println(STR."If I decode the result with the same encoding (\{encoding\}) , I get: \{decodedMessage\}.");
-		// System.out.println(STR."If I decode the result with the default encoding (UTF-8) , I get: \{utf8DecodedMessage\}.");
-		// System.out.print("If I decode the result with the default encoding for this JVM (" + System.getProperty("file.encoding") + "), I get: ");
     }
 }
