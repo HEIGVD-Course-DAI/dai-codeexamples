@@ -1,0 +1,52 @@
+version: '3.9'
+
+services:
+
+  singlethread:
+    image: dai/concurrent-servers
+    build: ./java_servers
+    ports:
+      - 10001:10001
+    command: ["singlethread", "10001"]
+
+  multithread:
+    image: dai/concurrent-servers
+    build: ./java_servers
+    ports:
+      - 10002:10002
+    command: ["multithread", "10002"]
+
+  fixedthreadpool_4:
+    image: dai/concurrent-servers
+    build: ./java_servers
+    ports:
+      - 10003:10003
+    command: ["fixedthreadpool", "10003", "4"]
+
+  fixedthreadpool_500:
+    image: dai/concurrent-servers
+    build: ./java_servers
+    ports:
+      - 10004:10004
+    command: ["fixedthreadpool", "10004", "500"]
+
+  cachedthreadpool:
+    image: dai/concurrent-servers
+    build: ./java_servers
+    ports:
+      - 10005:10005
+    command: ["cachedthreadpool", "10005"]
+
+  virtualthreads:
+    image: dai/concurrent-servers
+    build: ./java_servers
+    ports:
+      - 10006:10006
+    command: ["virtualthread", "10006"]
+
+  asyncjsserver:
+    image: dai/asyncjsserver
+    build: ./js_servers
+    ports:
+      - 10007:10007
+    command: ["10007"]
