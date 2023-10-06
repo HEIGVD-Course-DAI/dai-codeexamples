@@ -7,8 +7,6 @@ import java.util.concurrent.ExecutorService;
 
 /**
  * A mult-threaded server that creates a new thread for each client.
- * 
- * 
  */
 public class FixedThreadPoolServer {
 

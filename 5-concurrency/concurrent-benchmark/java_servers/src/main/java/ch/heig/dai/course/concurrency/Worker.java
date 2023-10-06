@@ -6,7 +6,6 @@ public class Worker {
     int SLEEP_DURATION = 100;
     int NUM_COMPUTE_ITERATIONS = 100_000;
 
-
     public String work(String request) throws IOException {
         // Perform one or several tasks
         if (request.contains("/compute")) workCompute();
