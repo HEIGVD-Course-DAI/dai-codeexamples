@@ -7,10 +7,9 @@ class StringExamples {
 
     public static void daiString() {
         String text = "I😂DAI";
-        char[] characters = text.toCharArray();
-        System.out.println("The string " + text + " has " + characters.length + " characters:");
-        for (char c: characters) {
-            System.out.println(c);
+        System.out.println("The string " + text + " has " + text.length() + " characters:");
+        for (int i=0; i<text.length(); i++) {
+            System.out.println(text.charAt(i));
         }
     }
 
