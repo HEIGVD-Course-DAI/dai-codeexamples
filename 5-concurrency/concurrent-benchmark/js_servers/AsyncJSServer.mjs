@@ -1,4 +1,5 @@
 import express from 'express'
+import nocache from 'nocache'
 
 const PORT = process.argv[2] || 3000
 const SLEEP_DURATION = 100
@@ -46,5 +47,6 @@ function onListen() {
 // Start the application
 // -----------------------------------------------------------------------------
 const app = express()
+app.use(nocache())
 app.get('/*', onClient)
 app.listen(PORT, onListen)
