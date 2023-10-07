@@ -2,11 +2,11 @@ import express from 'express'
 
 const PORT = process.argv[2] || 3000
 const SLEEP_DURATION = 100
-const NUM_COMPUTE_ITERATIONS = 100_000
+const NUM_COMPUTE_ITERATIONS = 200_000 // Twice as many as Java. JavaScript's Math.random is faster.
 
 // This function is synchronous and blocks the main thread
 function workCompute() {
-    let result = 0
+    let result = 0.0
     for (let i = 0; i < NUM_COMPUTE_ITERATIONS; i++) {
         result += Math.random()
     }
