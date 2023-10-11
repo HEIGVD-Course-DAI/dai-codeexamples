@@ -6,8 +6,8 @@ class TextualTCPClient {
     public static void main(String args[]) {
 
         try (Socket socket = new Socket("localhost", 1234);
-             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
-             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8))) {
+             var in = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+             var out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8))) {
 
             for (int i = 0; i < 10; i++) {
                 // There are two errors here!

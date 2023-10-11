@@ -9,8 +9,8 @@ class TextualTCPServer {
             while (true) {
 
                 try (Socket socket = serverSocket.accept();
-                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream(), UTF_8));
-                     BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), UTF_8))) {
+                     var in = new BufferedReader(new InputStreamReader(socket.getInputStream(), UTF_8));
+                     var out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), UTF_8))) {
 
                     String line;
                     while ((line = in.readLine()) != null) {

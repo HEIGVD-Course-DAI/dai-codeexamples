@@ -8,8 +8,8 @@ class BinaryTCPServer {
             while (true) {
 
                 try (Socket socket = serverSocket.accept();
-                     InputStream in = new BufferedInputStream(socket.getInputStream());
-                     OutputStream out = new BufferedOutputStream(socket.getOutputStream())) {
+                     var in = new BufferedInputStream(socket.getInputStream());
+                     var out = new BufferedOutputStream(socket.getOutputStream())) {
 
                     int i;
                     while ((i = in.read()) != -1) {
