@@ -21,11 +21,11 @@ public class SimpleClientHandler {
             System.out.println("Client connected");
 
             StringBuilder request = new StringBuilder();
-            String response, line;
+            String line;
             while((line = in.readLine()) != null && line.length() != 0) {
                 request.append(line);
              }
-            response = worker.work(request.toString());
+            String response = worker.work(request.toString());
             out.write(response);
             out.flush();
 
