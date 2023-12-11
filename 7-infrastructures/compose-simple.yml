@@ -1,0 +1,15 @@
+services:
+
+  site-a:
+    image: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./site-a:/usr/share/nginx/html
+
+  site-b:
+    image: nginx
+    ports:
+      - "8081:80"
+    volumes:
+      - ./site-b:/usr/share/nginx/html
