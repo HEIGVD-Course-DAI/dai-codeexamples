@@ -1,0 +1,32 @@
+# compose-traefik.yml file
+services:
+
+  site-a:
+    image: nginx
+    volumes:
+      - ./site-a:/usr/share/nginx/html
+    deploy:
+      replicas: 5
+    labels:
+      - traefik.http.routers.site-a.rule=Host(`site-a.localhost`)
+
+  site-b:
+    image: nginx
+    volumes:
+      - ./site-b:/usr/share/nginx/html
+    deploy:
+      replicas: 5
+    labels:
+      - traefik.http.routers.site-b.rule=Host(`site-b.localhost`)
+
+  traefik:
+    image: traefik
+    command: 
+      - --api.insecure=true  # Enable Traefik dashboard
+      - --providers.docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "80:80" # Web sites a and b
+      - "8080:8080" # Traefik dashboard
+
