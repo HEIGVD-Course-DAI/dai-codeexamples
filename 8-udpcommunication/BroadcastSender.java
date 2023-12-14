@@ -5,13 +5,12 @@ import java.net.InetSocketAddress;
 import static java.nio.charset.StandardCharsets.*;
 
 class BroadcastSender {
-    // final static String IPADDRESS = "255.255.255.255";
-    final static String IPADDRESS = "239.1.2.3";
+    final static String IPADDRESS = "255.255.255.255";
     final static int PORT = 44444;
 
     public static void main(String[] args) {
         try (DatagramSocket socket = new DatagramSocket()) {
-            // socket.setBroadcast(true);
+            socket.setBroadcast(true);
 
             String message = "Hello everybody!";
             byte[] payload = message.getBytes(UTF_8);
