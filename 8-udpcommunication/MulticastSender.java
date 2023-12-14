@@ -1,8 +1,8 @@
 import java.io.IOException;
 import java.net.MulticastSocket;
-import java.nio.charset.StandardCharsets;
 import java.net.InetSocketAddress;
 import java.net.DatagramPacket;
+import static java.nio.charset.StandardCharsets.*;
 
 
 class MulticastSender {
@@ -11,10 +11,10 @@ class MulticastSender {
 
     public static void main(String[] args) {
         try (MulticastSocket socket = new MulticastSocket()) {
-            InetSocketAddress dest_address = new InetSocketAddress(IPADDRESS, 44444);
 
-            String message = "This is a multicast message!";
-            byte[] payload = message.getBytes(StandardCharsets.UTF_8);
+            String message = "Hello group members";
+            byte[] payload = message.getBytes(UTF_8);
+            InetSocketAddress dest_address = new InetSocketAddress(IPADDRESS, 44444);
             var packet = new DatagramPacket(payload, payload.length, dest_address);
             socket.send(packet);
         } catch (IOException ex) {

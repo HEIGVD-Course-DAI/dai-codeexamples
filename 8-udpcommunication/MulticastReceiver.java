@@ -2,8 +2,8 @@ import java.io.IOException;
 import java.net.MulticastSocket;
 import java.net.InetSocketAddress;
 import java.net.NetworkInterface;
-import java.nio.charset.StandardCharsets;
 import java.net.DatagramPacket;
+import static java.nio.charset.StandardCharsets.*;
 
 
 public class MulticastReceiver {
@@ -19,7 +19,7 @@ public class MulticastReceiver {
             byte[] buffer = new byte[1024];
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
             socket.receive(packet);
-            String message = new String(packet.getData(), 0, packet.getLength(), StandardCharsets.UTF_8);
+            String message = new String(packet.getData(), 0, packet.getLength(), UTF_8);
 
             System.out.println("Received message: " + message + " from " + packet.getAddress() + ", port " + packet.getPort());
             socket.leaveGroup(group_address, netif);
