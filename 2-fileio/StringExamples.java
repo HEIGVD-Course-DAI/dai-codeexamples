@@ -8,17 +8,20 @@ class StringExamples {
     public static void daiString() {
         String text = "I😂DAI";
         System.out.println("The string " + text + " has " + text.length() + " characters:");
-        for (int i=0; i<text.length(); i++) {
-            System.out.println(text.charAt(i));
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            System.out.println((int)c + "\t" + text.charAt(i));
         }
     }
 
     public static void daiCodePoints() {    
         String text = "I😂DAI";
         int[] codepoints = text.codePoints().toArray();
-        System.out.println("The string " + text + " has " + codepoints.length + " codepoints:");
-        for (int i: codepoints) {
-            System.out.println(Character.toChars(i));
+        System.out.println("The string " + text + " has " + codepoints.length +  " codepoints:");
+        for (int i = 0; i < codepoints.length; i++) {
+            int c = codepoints[i];
+            System.out.print(c + "\t");
+            System.out.println(Character.toChars(c));
         }
     }
 
